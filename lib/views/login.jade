@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        title Login
+        link(rel='stylesheet', href='vendors/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='vendors/admin-lte/dist/css/AdminLTE.css')
+    body.login-page
+        h1 Page de Login
+        .login-box
+            .login-logo
+            .login-box-body
+                form(action="/account/login" method="post")
+                    ul
+                        li.form-group
+                            label(for="username") Login : 
+                            input(type="text", id="username", name="username")
+                        li.form-group
+                            label(for="password") Mot de passe :
+                            input(type="text", id="password", name="password")
+                    button(type="submit") Se connecter

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        title Inscription
+        link(rel='stylesheet', href='vendors/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='vendors/admin-lte/dist/css/AdminLTE.css')
+    body.login-page
+        h1 Page d'Inscription
+        .login-box
+            .login-logo
+            .login-box-body
+                form(action="/account/signin" method="post")
+                    ul
+                        li
+                            label(for="username") Login : 
+                            input(type="text", id="username", name="username")
+                        li
+                            label(for="password") Mot de passe :
+                            input(type="text", id="password", name="password")
+                    button(type="submit") S'inscrire
+                

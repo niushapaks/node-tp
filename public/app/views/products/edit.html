@@ -1,0 +1,39 @@
+<section class="content-header">
+  <h1>
+    {{product.name}}
+    <small>Produit</small>
+  </h1>
+</section>
+<section class="content">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">{{action}} du produit</h3>
+    </div>
+    <form role="form">
+      <div class="box-body">
+        <div class="form-group">
+          <label>Nom :</label>
+          <input type="text" class="form-control" ng-model="product.name">
+        </div>
+        <div class="form-group">
+          <label>Prix :</label>
+          <div class="input-group">
+            <input type="number" class="form-control" ng-model="product.price">
+            <span class="input-group-addon"><i class="fa fa-euro"></i></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description :</label>
+          <textarea class="form-control" ng-model="product.description"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Catégorie :</label>
+          <select class="form-control" ng-model="product.category" ng-options="category._id as category.name for category in categories track by category._id"></select>
+        </div>
+      </div>
+      <div class="box-footer">
+        <button type="submit" class="btn btn-primary col-xs-12" ng-click="save()">Sauvegarder</button>
+      </div>
+    </form>
+  </div>
+</section>

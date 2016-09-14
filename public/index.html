@@ -1,0 +1,76 @@
+<html ng-app="ecomm">
+  <head>
+    <title>EComm</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendors/admin-lte/dist/css/AdminLTE.css" />
+    <link rel="stylesheet" href="vendors/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="vendors/toastr/toastr.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="vendors/admin-lte/dist/css/skins/skin-blue.css" />
+  </head>
+  <body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+      <header class="main-header">
+        <a href="#/" class="logo">
+          <span class="logo-mini"><b>E</b></span>
+          <span class="logo-lg"><b>E</b>Comm</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li class="dropdown tasks-menu" title="Ouvrir le Chat">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-click="$event.preventDefault();">
+                  <i class="fa fa-wechat"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><chat></chat></li>
+                </ul>
+              </li>
+              <li title="Se Déconnecter">
+                <a href="/logout"><i class="fa fa-sign-out"></i></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <aside class="main-sidebar" ng-controller="SidebarCtrl">
+        <section class="sidebar">
+          <ul class="sidebar-menu">
+            <li class="header">Menu</li>
+            <li ng-repeat="link in menu" ng-class="{active: isActive(link)}">
+              <a ng-href="#/{{link.href}}"><i class="fa fa-{{link.icon}}"></i> <span>{{link.label}}</span></a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper">
+        <div ng-view></div>
+      </div>
+      <footer class="main-footer">
+        <strong>Copyright &copy; 2015 <a href="#">So@t</a>.</strong> Tous droits réservés.
+      </footer>
+    </div>
+    <!-- bower:js -->
+    <script src="vendors/jquery/dist/jquery.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular-route/angular-route.js"></script>
+    <script src="vendors/admin-lte/dist/js/app.js"></script>
+    <script src="vendors/toastr/toastr.js"></script>
+    <script src="vendors/angular-scroll-glue/src/scrollglue.js"></script>
+    <!-- endbower -->
+    <script src="vendors/socket.io.js"></script>
+    <!-- inject:js -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/CategoriesCtrl.js"></script>
+    <script src="app/controllers/HomeCtrl.js"></script>
+    <script src="app/controllers/ProductsCtrls.js"></script>
+    <script src="app/controllers/SidebarCtrl.js"></script>
+    <script src="app/directives/chat.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

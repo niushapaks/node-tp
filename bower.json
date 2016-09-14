@@ -1,0 +1,25 @@
+{
+  "name": "final",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gaku-sei/node",
+  "authors": [
+    "Kévin Combriat <japan.combriat.kevin@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.4",
+    "angular": "1.4.0",
+    "angular-route": "1.4.0",
+    "admin-lte": "2.1.1",
+    "components-font-awesome": "4.3.0",
+    "toastr": "2.1.1",
+    "angular-scroll-glue": "2.0.5"
+  }
+}

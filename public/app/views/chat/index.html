@@ -1,0 +1,27 @@
+<div class="box box-primary direct-chat direct-chat-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Chat - {{user.username}}</h3>
+  </div>
+  <div class="box-body">
+    <div class="direct-chat-messages" scroll-glue>
+      <div class="direct-chat-msg" ng-class="{right: isFromCurrentUser(message)}" ng-repeat="message in messages">
+        <div class="direct-chat-info clearfix">
+          <span class="direct-chat-name" ng-class="isFromCurrentUser(message) ? 'pull-right' : 'pull-left'">{{message.user.username}}</span>
+          <span class="direct-chat-timestamp" ng-class="isFromCurrentUser(message) ? 'pull-left' : 'pull-right'">{{message.createdAt|date:'medium'}}</span>
+        </div>
+        <img class="direct-chat-img" src="img/default_user.png" alt="Image Utilisateur">
+        <div class="direct-chat-text">{{message.content}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="box-footer">
+    <form role="form">
+      <div class="input-group">
+        <input type="text" ng-model="message" placeholder="Taper un message..." class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-primary btn-flat" ng-click="pushMessage($event)">Envoyer</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
